@@ -227,6 +227,22 @@
                 height: 60px;
             }
         }
+        .colorchanging {
+         color: red;
+    animation-name: colorchange;
+    animation-duration: 4s ;
+    animation-iteration-count:infinite ;
+}
+@keyframes colorchange {
+    0% {color: pink; }
+    10% {color: purple; }
+    20% {color: blue; }
+    30% {color: red; }
+    40% {color: green; }
+    50% {color: cyan; }
+    70% {color: orange; }   
+}
+
     </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -234,8 +250,8 @@
  </head>
  <body>
   <main class="birthday-container">
-   <h1 id="main-message" class="main-message">Happy Birthday Prestina!</h1>
-   <p id="sub-message" class="sub-message">Wish you a good day!</p>
+   <p id="color changing"><h1 id="main-message" class="main-message">Happy Birthday Prestina!</h1></p>
+   <p id="color changing"><p id="sub-message" class="sub-message">Wish you a good day!</p></p>
    <div id="birthday-name" class="birthday-name"></div>
   </main><!-- Balloons -->
   <div class="balloon balloon1"></div>
