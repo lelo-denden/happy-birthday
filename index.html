@@ -48,10 +48,6 @@
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             margin-bottom: 1rem;
             animation: bounce 2s ease-in-out infinite;
-            color: red;
-    animation-name: colorchange;
-    animation-duration: 4s ;
-    animation-iteration-count:infinite ;
         }
 
         .sub-message {
@@ -59,10 +55,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             margin-bottom: 2rem;
             animation: fadeInOut 3s ease-in-out infinite;
-            color: red;
-    animation-name: colorchange;
-    animation-duration: 4s ;
-    animation-iteration-count:infinite ;
         }
 
         .birthday-name {
@@ -71,20 +63,33 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-top: 1rem;
             animation: glow 2s ease-in-out infinite alternate;
-            color: red;
-    animation-name: colorchange;
-    animation-duration: 4s ;
-    animation-iteration-count:infinite ;
         }
 
-        @keyframes colorchange {
-    0% {color: pink; }
-    10% {color: purple; }
-    20% {color: blue; }
-    30% {color: red; }
-    40% {color: green; }
-    50% {color: cyan; }
-    70% {color: orange; }   
+
+        .main-message,
+.sub-message,
+.birthday-name {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  animation: rainbowMove 5s linear infinite;
+  text-shadow: none;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
         @keyframes bounce {
@@ -325,11 +330,7 @@
 
             
             document.body.style.background = `linear-gradient(135deg, ${primaryColor}, ${secondaryColor}, ${accentColor}, ${backgroundColor}, #9b59b6)`;
-            
-            
-            document.getElementById('main-message').style.color = textColor;
-            document.getElementById('sub-message').style.color = textColor;
-            document.getElementById('birthday-name').style.color = secondaryColor;
+         
 
             
             const balloons = document.querySelectorAll('.balloon');
@@ -347,7 +348,7 @@
                 star.style.background = secondaryColor;
             });
 
-            // Update confetti colors
+            
             const confetti = document.querySelectorAll('.confetti');
             confetti.forEach((piece, index) => {
                 const colors = [primaryColor, secondaryColor, accentColor, backgroundColor];
